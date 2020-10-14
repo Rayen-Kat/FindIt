@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Find-It</string>
+    <string name="title_activity_mapa1">Map</string>
+    <string name="title_activity_mapa_visitante">Map</string>
 </resources>

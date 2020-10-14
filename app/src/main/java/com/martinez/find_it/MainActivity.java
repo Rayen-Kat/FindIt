@@ -2,6 +2,7 @@ package com.martinez.find_it;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -10,27 +11,32 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    //Creamos las variables que haran referencia a los widgets
-    private TextView txtTitulo;
-    private Button btnIniciar;
+
+    Button btnUsuario, btnVisitante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Realizar las referencias
-        txtTitulo = findViewById(R.id.txtTitulo);
-        btnIniciar = findViewById(R.id.btnIniciar);
+        btnUsuario = findViewById(R.id.btnUsuario);
+        btnVisitante = findViewById(R.id.btnVisitante);
 
-        txtTitulo.setTextColor(Color.BLUE);
+        btnUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intento1 = new Intent(getApplicationContext(), Usuario.class);
+                startActivity(intento1);
+            }
+        });
+
+        btnVisitante.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intento2 = new Intent(getApplicationContext(), MapaVisitante.class);
+                startActivity(intento2);
+            }
+        });
     }
 
-    public void Saludar(View view){
-        Toast.makeText(this,"Hiciste click",Toast.LENGTH_LONG).show();
-    }
-
-    public void Despedir(View view){
-        Toast.makeText(this,"Adios",Toast.LENGTH_LONG).show();
-    }
 }
