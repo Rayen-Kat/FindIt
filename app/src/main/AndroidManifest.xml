@@ -30,8 +30,12 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".MapaUsuario"
+            android:label="@string/title_activity_mapa_usuario"></activity>
+        <activity android:name=".RegistroUsuario" />
+        <activity
             android:name=".MapaVisitante"
-            android:label="@string/title_activity_mapa_visitante"></activity>
+            android:label="@string/title_activity_mapa_visitante" />
         <activity android:name=".Usuario" />
         <activity android:name=".MainActivity">
             <intent-filter>
